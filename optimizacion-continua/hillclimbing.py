@@ -12,7 +12,8 @@ class hillclimbing:
     def evolve(self):
         x = np.arange(0, self.maxiterations)
         y = np.zeros(self.maxiterations, float)
-        self.best.randomInitialization()
+        self.best.ourInitialization(3)
+        #self.best.randomInitialization()
         for iteration in range(self.maxiterations):
             copyofbest = solution(self.best.size, self.best.function)
             copyofbest.from_solution(self.best)
