@@ -1,0 +1,25 @@
+Trabajo 35%
+Para los 3 problemas (continuo y discreto sin restricciones, y binario con restricciones) incluir una inicialización de la solución diferente 
+eso sí, debe ser aleatorizada) y un operador de Tweak, luego comparar los resultados con la versión actual en una tabla que muestre el fitness 
+promedio de 31 repeticiones del experimento por cada problema que se resuelve, además del mejor y peor valor de fitness, la desviación estándar 
+del fitness, el tiempo de ejecución promedio y una figura donde se comparen las curvas de convergencia promedio de cada algoritmo (el realizado 
+en la clase -original- y el que usa los nuevos operadores -nuevo-).
+ 
+En optimización continua (Optimizar funciones), por ejemplo:
+1-     Inicialización basada en sectores (sub-cubos) o separadas por una distancia minima.
+2-     Tweak basado en mutación gaussiana (distribución normal con medio de 0 y desviación estándar sigma) y para el algoritmo sigma es un parámetro como bw.
+* incluir las funciones presentadas en clase.
+ 
+En optimización discreta (TSP simétrico euclidiano), por ejemplo:
+1-     Inicialización aleatoria de ciertos trazos y otros basados en el más cercano.
+2-     Tweak basado en 3-opt.
+ver https://en.wikipedia.org/wiki/3-opt o
+ver http://matejgazda.com/tsp-algorithms-2-opt-3-opt-in-python
+* incluir por lo menos 4 problemas de internet.
+ 
+En optimización binaria (0/1 knapsack)
+1-     Inicializar aleatoriamente dando prioridad a una regla, por ejemplo, basado en mayor valor o en menor peso o en mayor densidad (valor/peso), asegurando que la solución es factible.
+2-     Tweak basado en intercambiar dos objetos (uno que esta y otro que no está en la mochila) siempre y cuando la solución sea factible.
+ 
+Bonus Pack: Usar Recocido Simulado
+
