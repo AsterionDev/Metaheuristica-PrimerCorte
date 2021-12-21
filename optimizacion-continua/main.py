@@ -1,6 +1,6 @@
 import numpy as np
 from hillclimbing import hillclimbing
-#from sphere import sphere
+from sphere import sphere
 from step import step
 import matplotlib.pyplot as plt
 
@@ -11,7 +11,7 @@ if __name__ == '__main__':
     # print (result)
 
     np.random.seed(40)
-    myStep = step(-5.0, 5.0)
+    myStep = sphere(-5.0, 5.0)
     myHC = hillclimbing(myStep, 2, 30, 0.5)
     [x, y] = myHC.evolve()
 

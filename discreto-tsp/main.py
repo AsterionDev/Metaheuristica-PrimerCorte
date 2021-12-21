@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 if __name__ == '__main__':
     maxRepetitions = 31
     maxIterations = 1000
-    directory = './problems/'
+    directory = 'discreto-tsp/problems/'
     myProblem = tsp(directory + 'ulysses16..txt')
 
     best = np.zeros(maxRepetitions, dtype=float)

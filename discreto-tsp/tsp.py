@@ -30,3 +30,6 @@ class tsp:
                 j = 0
             fitness = fitness + self.distances[cells[i]][cells[j]]
         return fitness
+    
+    def getDistance(self):
+        return self.distances
