@@ -10,9 +10,9 @@ if __name__ == '__main__':
     # result = myStep.evaluate(input)
     # print (result)
 
-    np.random.seed(5)
+    np.random.seed(40)
     myStep = step(-5.0, 5.0)
-    myHC = hillclimbing(myStep, 2, 30, 5)
+    myHC = hillclimbing(myStep, 2, 30, 0.5)
     [x, y] = myHC.evolve()
 
     # plotting
