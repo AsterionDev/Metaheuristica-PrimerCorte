@@ -36,15 +36,30 @@ import numpy as np
 # # print(li.pop(0))
 # # print(li.pop(0))
 # # print(sorted_li)
-cells= np.array([0,1,2,3,4,5,6,7,8,9])
-pos = np.random.choice(np.arange(1, 10), 2, replace=False)
-print(pos)
-pos.sort()
-i = pos[0]
-k = pos[1]
-print(cells)
-cells[i:k] = cells[k-1:i-1:-1]
-print(pos)
-print(i)
-print(k)
-print(cells)
+# cells= np.array([0,1,2,3,4,5,6,7,8,9])
+# pos = np.random.choice(np.arange(1, 10), 2, replace=False)
+# print(pos)
+# pos.sort()
+# i = pos[0]
+# k = pos[1]
+# print(cells)
+# cells[i:k] = cells[k-1:i-1:-1]
+# print(pos)
+# print(i)
+# print(k)
+# print(cells)
+
+density = np.array([0,1,2,3,4,5,6,7])
+lista=[]
+for i in range(8):
+    lista.append((i,density[i]))
+    
+lista = sorted(lista, key=lambda tup: tup[1],reverse=True)
+print(lista)
+
+lista.remove((5,5))
+print(lista)
+
+# sigma = (15 - 1)*0.25
+# for i in range(100):
+#     print(np.floor(np.abs(np.random.normal(0, sigma))))
