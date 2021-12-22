@@ -1,7 +1,7 @@
+from io import SEEK_CUR
 import numpy as np
+from numpy.lib.function_base import append
 from tsp import tsp
-from iteration_utils import duplicates
-
 
 class solution:
     def __init__(self, p: tsp):
@@ -34,20 +34,30 @@ class solution:
         print(self.fitness)
 
     def ourInitialization(self):
-        self.cells = np.arange(self.problem.size)
-        #Inicializar un arreglo vacio de tamaño size
-        #For rango tamaño
-            #si i es impar:
-                #generar valor aleatorio
-                #Si no esta agregado agregarlo, si esta repetetir
-            #Si es par:
-                #sacar el más cercano del i-1
-                #verificar si no esta, si esta repetir pero con el mas cercano -1 
-        
-        self.cells = np.random.choice(self.problem.size, self.problem.size, replace=False)
+        self.cells = []
+        for i in range(self.problem.size):
+            self.cells.append(None)
+            if i%2 == 0 :
+                self.cells[i] = np.random.choice(self.problem.size)
+                while(self.verify(self.cells)==False):
+                    self.cells[i] = np.random.choice(self.problem.size)
+            else:
+                orderedDistanceList = self.closer(self.problem.distances[self.cells[i-1]])
+                self.cells[i]=orderedDistanceList.pop(0)[0]
+                while(self.verify(self.cells)==False):
+                    self.cells[i]=orderedDistanceList.pop(0)[0]
+        self.cells= np.array(self.cells)
         self.fitness = self.problem.evaluate(self.cells)
 
-    def verify(array):
+    def verify(self,array):
         if len(set(array)) < len(array):
             return False
         return True
+    
+    def closer(self, array):
+        auxLi=[]
+        for i in range(len(array)):
+            auxLi.append((i, array[i] ))
+        orderedList= sorted(auxLi, key=lambda tup: tup[1])
+        return orderedList
+

@@ -7,7 +7,7 @@ if __name__ == '__main__':
     maxRepetitions = 31
     maxIterations = 1000
     directory = 'discreto-tsp/problems/'
-    myProblem = tsp(directory + 'ulysses16..txt')
+    myProblem = tsp(directory + 'ulysses22.txt')
 
     best = np.zeros(maxRepetitions, dtype=float)
     avgX = np.arange(0, maxIterations)

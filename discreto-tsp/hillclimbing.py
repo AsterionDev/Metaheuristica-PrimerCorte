@@ -13,6 +13,7 @@ class hillclimbing:
         x = np.arange(0, self.maxIterations)
         y = np.zeros(self.maxIterations, float)
         self.best.randomInitialization()
+        #self.best.ourInitialization()
         for iteration in range(self.maxIterations):
             copyOfBest = solution(self.best.problem)
             copyOfBest.from_solution(self.best)
