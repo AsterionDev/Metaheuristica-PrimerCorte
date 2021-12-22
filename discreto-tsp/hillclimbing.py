@@ -12,12 +12,13 @@ class hillclimbing:
     def evolve(self):
         x = np.arange(0, self.maxIterations)
         y = np.zeros(self.maxIterations, float)
-        self.best.randomInitialization()
-        #self.best.ourInitialization()
+        #self.best.randomInitialization()
+        self.best.ourInitialization()
         for iteration in range(self.maxIterations):
             copyOfBest = solution(self.best.problem)
             copyOfBest.from_solution(self.best)
-            copyOfBest.tweak()
+            #copyOfBest.tweak()
+            copyOfBest.ourTweak()
             if copyOfBest.fitness < self.best.fitness:
                 self.best.from_solution(copyOfBest)
             y[iteration] = self.best.fitness

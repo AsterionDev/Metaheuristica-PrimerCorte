@@ -60,4 +60,12 @@ class solution:
             auxLi.append((i, array[i] ))
         orderedList= sorted(auxLi, key=lambda tup: tup[1])
         return orderedList
+    def ourTweak(self, numInter= 1):
+        for i in range(numInter):
+            pos = np.random.choice(np.arange(0, self.problem.size), 2, replace=False)
+            aux=self.cells[pos[0]]
+            self.cells[pos[0]]=self.cells[pos[1]]
+            self.cells[pos[1]] = aux
+        self.fitness = self.problem.evaluate(self.cells)
+
 
