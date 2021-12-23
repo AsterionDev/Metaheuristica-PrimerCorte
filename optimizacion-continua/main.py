@@ -24,6 +24,7 @@ if __name__ == "__main__":
         my_griewank,
         my_ackley,
     ]
+    
 
     max_iterations = 1000
     dimensions = 10

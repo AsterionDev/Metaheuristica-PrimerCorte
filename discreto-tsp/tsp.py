@@ -5,7 +5,8 @@ class tsp:
     def __init__(self, filename):
         file1 = open(filename, 'r')
         lines = file1.readlines()
-
+        
+        self.name=filename
         self.size = int(lines[0])
         self.distances = np.zeros((self.size, self.size), dtype=float)
 
@@ -30,4 +31,7 @@ class tsp:
                 j = 0
             fitness = fitness + self.distances[cells[i]][cells[j]]
         return fitness
+    
+    def __str__(self):
+        return self.name+"-Size:"+str(self.size)
     
