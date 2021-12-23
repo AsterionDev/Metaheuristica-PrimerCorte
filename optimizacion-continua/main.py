@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     # algoritmos
     myHC = hillclimbing(max_iterations)
-    myHC.hillcilmbingClasico(0.5)
+    myHC.hillcilmbingClasico(9)
     myHC2 = hillclimbing(max_iterations)
     myHC2.hillcilmbingModified(10, 5)
     my_algorithms = [myHC, myHC2]
