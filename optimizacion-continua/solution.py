@@ -52,8 +52,8 @@ class solution:
         self.fitness = self.function.evaluate(self.cells)
 
     def ourTweak(self, sigma: float):
-        bandwidths = np.random.normal(0, sigma, size=(self.size,))
-        self.cells = self.cells + bandwidths
+        noise = np.random.normal(0, sigma, size=(self.size,))
+        self.cells = self.cells + noise
         self.cells[self.cells < self.function.lowerbound] = self.function.lowerbound
         self.cells[self.cells > self.function.upperbound] = self.function.upperbound
         self.fitness = self.function.evaluate(self.cells)
