@@ -28,4 +28,4 @@ class knapsack:
             fitness = (cells * self.profits).sum()
         return fitness, weight
     def __str__(self):
-        return self.name+"-Size:"+str(self.size)+"-Capacity:"+str(self.capacity)+"-OptimalKnow:"+str(self.OptimalKnown)
+        return "KPB-Size:"+str(self.size)+"-Capacity:"+str(self.capacity)+"-OptimalKnow:"+str(self.OptimalKnown)
