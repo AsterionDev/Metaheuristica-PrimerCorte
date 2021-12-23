@@ -16,3 +16,8 @@ class Ackley:
         s1 = (np.power(cells,2)).sum()
         s2 = (np.cos(c*cells)).sum()
         return -a*mt.exp( -b*np.sqrt( s1 / n )) - mt.exp( s2 / n ) + a + mt.exp(1)
+
+    def __str__(self):
+        return "Ackley-lb:"+str(self.lowerbound) + "-up:"+str(self.upperbound)
+    
+

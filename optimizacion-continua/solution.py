@@ -31,9 +31,7 @@ class solution:
         self.cells[self.cells > self.function.upperbound] = self.function.upperbound
         self.fitness = self.function.evaluate(self.cells)
 
-    def show(self):
-        print(self.cells)
-        print(self.fitness)
+  
 
     def ourInitialization(self, tries):
         best = np.random.uniform(

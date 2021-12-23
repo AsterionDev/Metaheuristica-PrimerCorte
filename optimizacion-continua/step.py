@@ -10,3 +10,5 @@ class step:
         newcells = np.floor(cells+0.5)
         summa = ( newcells * newcells).sum()
         return summa
+    def __str__(self):
+            return "Step-lb:"+str(self.lowerbound) + "-up:"+str(self.upperbound)

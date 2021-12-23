@@ -6,8 +6,11 @@ class Griewank:
         self.upperbound = ub
         self.optimin = 0.0
 
-    def evaluate(cells):
+    def evaluate(self, cells):
         index = np.arange(1, len(cells)+1)
-        t1=(np.power(cells, 2)).sum / 4000
+        t1=(np.power(cells, 2).sum()) / 4000
         t2= np.prod(np.cos(cells / np.sqrt(index)))
         return t1 - t2 +1
+
+    def __str__(self):
+        return "Griewank-lb:"+str(self.lowerbound) + "-up:"+str(self.upperbound)
