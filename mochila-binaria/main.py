@@ -30,7 +30,7 @@ if __name__ == '__main__':
         print("{0:30}".format(str(my_function)), end=" ")
         for my_algorithm in my_algorithms:
             curve.append(np.zeros(max_iterations, float))
-            best = np.zeros(max_iterations, dtype=float)
+            best = np.zeros(max_repetitions, dtype=float)
             my_time = diff_time()
             for this_repetition in range(max_repetitions):
                 np.random.seed(this_repetition)
