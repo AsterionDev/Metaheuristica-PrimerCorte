@@ -63,7 +63,7 @@ class solution:
         posWithWeight = sorted(posWithWeight, key=lambda tup: tup[1],reverse=True)
         weight = 0
         for i in range(self.problem.size):
-            sigma = len(posWithWeight)*0.25
+            sigma = len(posWithWeight)*0.20
             pos = (np.abs(np.floor(np.random.normal(0, sigma)))).item()
             pos = int(pos)
             if weight + self.problem.weights[posWithWeight[pos][0]] < self.problem.capacity:

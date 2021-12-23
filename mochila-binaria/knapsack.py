@@ -5,6 +5,7 @@ class knapsack:
     def __init__(self, filename):
         file1 = open(filename, 'r')
         lines = file1.readlines()
+        self.name=filename
 
         firstline = lines[0].split(' ')
         self.size = int(firstline[0])
@@ -26,3 +27,5 @@ class knapsack:
         if weight <= self.capacity:
             fitness = (cells * self.profits).sum()
         return fitness, weight
+    def __str__(self):
+        return self.name+"-Size:"+str(self.size)+"-Capacity:"+str(self.capacity)+"-OptimalKnow:"+str(self.OptimalKnown)
