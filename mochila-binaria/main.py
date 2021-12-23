@@ -4,6 +4,8 @@ from diffTime import diff_time
 import numpy as np
 import matplotlib.pyplot as plt
 
+#Codigo realizado por: Brayan Pinzon y Juan David Sotelo
+
 if __name__ == '__main__':
     max_repetitions = 31
     max_iterations = 1000
