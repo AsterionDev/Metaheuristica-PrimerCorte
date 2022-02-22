@@ -1,4 +1,5 @@
 import numpy as np
+from polinomio import polinomio
 from hillclimbing import hillclimbing
 from sphere import sphere
 from step import step
@@ -10,6 +11,11 @@ from diffTime import diff_time
 import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
+    
+    
+    directory = 'Datos/'
+    myProblem1 = polinomio(directory + 'regresion.txt')
+    
     my_step = step(-5.0, 5.0)
     my_shpere = sphere(-5.0, 5.0)
     my_schwefel = Schwefel(-100, 100)
